@@ -13,7 +13,7 @@ const Category = () => {
         <div>
             {
                 categoryName.map(category =>
-                    <Link key={category.category_id} to={`/category/${category.category_id}`} className='text-1xl block font-medium text-start ml-10 mt-2 border p-3 rounded-lg bg-slate-300'>
+                    <Link key={category.category_id} to={`/category/${category.category_id}`} className='text-1xl block font-medium text-start mx-auto mt-2 border p-3 rounded-lg bg-slate-300'>
                         {category.name}
                     </Link>
                 )

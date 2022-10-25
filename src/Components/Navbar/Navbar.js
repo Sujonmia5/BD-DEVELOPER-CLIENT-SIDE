@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Category from '../Category/Category';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -76,7 +77,7 @@ const Navbar = () => {
                         <li>
                             <Link
                                 to="/login"
-                                className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide dark:bg-indigo-500 text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                                className=" font-medium text-xl tracking-wide text-gray-900 transition-colors duration-200 hover:text-teal-accent-400"
                                 aria-label="Sign up"
                                 title="Sign up"
                             >
@@ -86,7 +87,7 @@ const Navbar = () => {
                         <li>
                             <Link
                                 to="/register"
-                                className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide dark:bg-indigo-500 text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                                className="font-medium text-xl tracking-wide text-gray-900 transition-colors duration-200 hover:text-teal-accent-400"
                                 aria-label="Sign up"
                                 title="Sign up"
                             >
@@ -166,41 +167,22 @@ const Navbar = () => {
                                     <nav>
                                         <ul className="space-y-4">
                                             <li>
-                                                <a
-                                                    href="/"
+                                                <Link
+                                                    to="/"
                                                     aria-label="Our product"
                                                     title="Our product"
-                                                    className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                                                    className='text-1xl block font-medium text-start mx-auto mt-2 border p-3 rounded-lg bg-slate-300'
                                                 >
-                                                    Product
-                                                </a>
+                                                    Home
+                                                </Link>
                                             </li>
-                                            <li>
-                                                <a
-                                                    href="/"
-                                                    aria-label="Our product"
-                                                    title="Our product"
-                                                    className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                                                >
-                                                    Features
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="/"
-                                                    aria-label="Product pricing"
-                                                    title="Product pricing"
-                                                    className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                                                >
-                                                    Pricing
-                                                </a>
-                                            </li>
+                                            <Category />
                                             <li>
                                                 <a
                                                     href="/"
                                                     aria-label="About us"
                                                     title="About us"
-                                                    className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                                                    className='text-1xl block font-medium text-start mx-auto mt-2 border p-3 rounded-lg bg-slate-300'
                                                 >
                                                     About us
                                                 </a>

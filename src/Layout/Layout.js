@@ -7,13 +7,15 @@ const Layout = () => {
     return (
         <div>
             <Navbar />
-            <div className=" mx-[5%] grid grid-cols-4 gap-4">
-                <div className="border">
+            <div className=" mx-[5%] mt-20 grid grid-cols-4 gap-4">
+                <div className="border p-10 hidden md:block">
                     <h1 className='text-2xl font-medium text-indigo-500'>Course Category</h1>
                     <div className="mt-1 h-px w-full dark:bg-indigo-500"></div>
-                    <Category />
+                    <div className='mt-8'>
+                        <Category />
+                    </div>
                 </div>
-                <div className="col-span-3 ...">
+                <div className="md:col-span-3 col-span-4">
                     <Outlet />
                 </div>
             </div>
