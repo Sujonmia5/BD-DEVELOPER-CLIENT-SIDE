@@ -32,8 +32,8 @@ const CourseDetails = () => {
                             </div>
                         </div>
                         <div className='flex justify-around mt-5'>
-                            <button className="self-start px-10 py-3 text-lg font-medium rounded-3xl dark:bg-indigo-400 dark:text-gray-900">Pay Now</button>
-                            <button className="self-start px-10 py-3 text-lg font-medium rounded-3xl dark:bg-indigo-400 dark:text-gray-900">Download Pdf</button>
+                            <button className="self-start px-10 py-3 text-lg font-medium rounded-3xl dark:bg-indigo-400 dark:text-gray-900 hover:bg-indigo-500">Pay Now</button>
+                            <button className="self-start px-10 py-3 text-lg font-medium rounded-3xl dark:bg-indigo-400 dark:text-gray-900 hover:bg-indigo-500">Download Pdf</button>
                         </div>
                     </div>
                     <img className='w-96' src={animation} alt="" />

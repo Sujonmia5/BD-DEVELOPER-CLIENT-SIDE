@@ -8,7 +8,7 @@ const Register = () => {
             <div className='flex justify-center h-[80vh]'>
                 <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 my-auto dark:bg-gray-200 dark:text-gray-900">
                     <div className="mb-8 text-center">
-                        <h1 className="my-3 text-4xl font-bold">Sign in</h1>
+                        <h1 className="my-3 text-4xl font-bold">Create An Account</h1>
                         <p className="text-sm dark:text-gray-400">Sign in to access your account</p>
                     </div>
                     <form novalidate="" action="" className="space-y-12 ng-untouched ng-pristine ng-valid">

@@ -36,34 +36,34 @@ const Navbar = () => {
                     </a>
                     <ul className="flex items-center hidden space-x-8 lg:flex">
                         <li>
-                            <a
-                                href="/"
+                            <Link
+                                to="/home"
                                 aria-label="Our product"
                                 title="Our product"
                                 className="font-medium text-xl tracking-wide text-gray-900 transition-colors duration-200 hover:text-teal-accent-400"
                             >
                                 Home
-                            </a>
+                            </Link>
                         </li>
                         <li>
-                            <a
-                                href="/"
+                            <Link
+                                to="/course"
                                 aria-label="Our product"
                                 title="Our product"
                                 className="font-medium text-xl tracking-wide text-gray-900 transition-colors duration-200 hover:text-teal-accent-400"
                             >
                                 Course
-                            </a>
+                            </Link>
                         </li>
                         <li>
-                            <a
-                                href="/"
+                            <Link
+                                to="/about"
                                 aria-label="Product pricing"
                                 title="Product pricing"
                                 className="font-medium text-xl tracking-wide text-gray-900 transition-colors duration-200 hover:text-teal-accent-400"
                             >
                                 About Us
-                            </a>
+                            </Link>
                         </li>
                         <label htmlFor="Toggle1" className="inline-flex items-center space-x-4 cursor-pointer dark:text-gray-100">
                             <span className="relative">

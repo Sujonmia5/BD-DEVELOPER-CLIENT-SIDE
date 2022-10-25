@@ -41,7 +41,7 @@ const Course = () => {
                         </div>
                     </div>
                     <div className='flex justify-center md:mt-10'>
-                        <Link to={`/course/details/${category_id}`} className="px-8 block py-3 font-bold text-1xl rounded-full dark:bg-gray-400 hover:bg-gray-300 font-bold dark:text-gray-900">Course Details</Link>
+                        <Link to={`/course/details/${category_id}`} className="self-start px-10 py-3 text-lg font-medium rounded-3xl dark:bg-indigo-400 hover:bg-indigo-500 dark:text-gray-900">Course Details</Link>
                     </div>
                 </div>
             </div>

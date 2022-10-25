@@ -1,10 +1,11 @@
 import React from 'react';
-import Course from '../Course/Course';
+import CourseCart from '../CourseCart/CourseCart';
+import Header from '../Header/Header';
 
 const Home = () => {
     return (
         <div>
-            <h1>this is home</h1>
+            <CourseCart />
         </div>
     );
 };

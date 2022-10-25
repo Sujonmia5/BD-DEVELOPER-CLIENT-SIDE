@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CourseCart = () => {
+const Context = () => {
     return (
         <div>
 
@@ -8,4 +8,4 @@ const CourseCart = () => {
     );
 };
 
-export default CourseCart;
+export default Context;
