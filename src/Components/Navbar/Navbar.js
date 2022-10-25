@@ -31,7 +31,7 @@ const Navbar = () => {
                             <rect x="14" y="11" width="7" height="12" />
                         </svg>
                         <span className="ml-2 text-xl font-bold tracking-wide text-gray-900 uppercase">
-                            Company
+                            BD Developers
                         </span>
                     </a>
                     <ul className="flex items-center hidden space-x-8 lg:flex">
@@ -118,7 +118,7 @@ const Navbar = () => {
                             </svg>
                         </button>
                         {isMenuOpen && (
-                            <div className="absolute top-0 left-0 w-full">
+                            <div className="absolute z-50 top-0 left-0 w-full">
                                 <div className="p-5 bg-white border rounded shadow-sm">
                                     <div className="flex items-center justify-between mb-4">
                                         <div>
@@ -143,8 +143,8 @@ const Navbar = () => {
                                                     <rect x="14" y="1" width="7" height="6" />
                                                     <rect x="14" y="11" width="7" height="12" />
                                                 </svg>
-                                                <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-                                                    Company
+                                                <span className="ml-2 text-xl font-bold tracking-wide text-gray-900 uppercase">
+                                                    BD Developers
                                                 </span>
                                             </a>
                                         </div>
@@ -171,7 +171,7 @@ const Navbar = () => {
                                                     to="/"
                                                     aria-label="Our product"
                                                     title="Our product"
-                                                    className='text-1xl block font-medium text-start mx-auto mt-2 border p-3 rounded-lg bg-slate-300'
+                                                    className='text-1xl block font-medium text-start mx-auto mt-2 border p-3 rounded-lg bg-slate-300 hover:bg-slate-400'
                                                 >
                                                     Home
                                                 </Link>
@@ -182,7 +182,7 @@ const Navbar = () => {
                                                     href="/"
                                                     aria-label="About us"
                                                     title="About us"
-                                                    className='text-1xl block font-medium text-start mx-auto mt-2 border p-3 rounded-lg bg-slate-300'
+                                                    className='text-1xl block font-medium text-start mx-auto mt-2 border p-3 rounded-lg bg-slate-300 hover:bg-slate-400'
                                                 >
                                                     About us
                                                 </a>
