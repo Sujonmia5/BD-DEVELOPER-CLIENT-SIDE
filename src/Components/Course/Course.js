@@ -8,7 +8,7 @@ const Course = () => {
     const { name, price, picture, details, Instructor, category_id, rating } = data
     return (
         <div className="px-4 shadow-lg w-auto py-10 rounded-lg mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl ">
-            <div className="overflow-hidden md:flex transition-shadow duration-300 bg-white rounded shadow-sm">
+            <div className="overflow-hidden md:flex transition-shadow duration-300 dark:bg-gray-300 rounded shadow-sm">
                 <Link to='/'>
                     <img
                         src={picture}
