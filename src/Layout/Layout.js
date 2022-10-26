@@ -1,13 +1,13 @@
-import React, { useContext, useState } from 'react';
+import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Category from '../Components/Category/Category';
 import Footer from '../Components/Footer/Footer';
 import Header from '../Components/Header/Header';
 import Navbar from '../Components/Navbar/Navbar';
-import { AuthContext } from '../Context/Context';
+
 
 const Layout = () => {
-    const { loader } = useContext(AuthContext)
+
 
     return (
         <div>

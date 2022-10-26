@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 const Category = () => {
     const [categoryName, setCategory] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/category')
+        fetch('https://assignment-10-server-hksyjnu4u-sujonmia5.vercel.app/category')
             .then(category => category.json())
             .then(data => setCategory(data))
     }, [])

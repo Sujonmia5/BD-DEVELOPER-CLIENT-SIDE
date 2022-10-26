@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
     const [error, setError] = useState('')
-    const { createUser, updateName, verifyMail, googleRegister, gitHubRegister } = useContext(AuthContext)
+    const { createUser, logOut, updateName, verifyMail, googleRegister, gitHubRegister } = useContext(AuthContext)
     // console.log(user);
     const Navigate = useNavigate()
 
@@ -31,6 +31,7 @@ const Register = () => {
                 Swal.fire('Account create Successful', 'Check your email and verify', "success")
                 // console.log(user);
                 form.reset()
+                logOut()
                 Navigate('/login')
             })
             .catch(error => {

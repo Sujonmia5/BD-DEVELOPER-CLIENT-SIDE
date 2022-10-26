@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
+import Loading from '../../Components/Loading/Loading';
 import { AuthContext } from '../../Context/Context';
 
 const PrivetRoute = ({ children }) => {
@@ -7,7 +8,7 @@ const PrivetRoute = ({ children }) => {
     const location = useLocation()
 
     if (loader) {
-        return <h1>this loading</h1>
+        return <Loading />
     }
 
     if (user && user.email) {

@@ -1,12 +1,22 @@
-import React, { useContext } from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { useLoaderData } from 'react-router-dom';
 import { FaStar, FaDownload } from 'react-icons/fa';
 import { AuthContext } from '../../Context/Context';
+import Swal from 'sweetalert2';
+
 
 const CourseDetails = () => {
     const courseDetails = useLoaderData()
     const { details, name, price, rating, animation, Instructor } = courseDetails
-    const { user } = useContext(AuthContext)
+    const [condition, setConditon] = useState(false)
+    const [download, setDownload] = useState(false)
+
+
+    const checkOut = () => {
+        Swal.fire('Congratulations Checkout successful', 'You can now Download pdf File', 'success')
+        setDownload(true)
+    }
+
     return (
         <div>
             <section className="dark:bg-gray-300 shadow-2xl rounded-lg border dark:text-gray-900">
@@ -32,17 +42,22 @@ const CourseDetails = () => {
                                 <p className='text-blue-700 inline-flex relative'>Rating: {rating}<FaStar className='text-yellow-500 absolute right-[-18px] top-1' /></p>
                             </div>
                         </div>
-                        <div className='flex justify-around mt-5'>
-                            {
-                                user?.uid ?
-                                    <Link className="self-start flex flex-row-reverse items-center px-10 py-3 text-lg font-medium rounded-3xl dark:bg-indigo-400 dark:text-gray-900 hover:bg-indigo-500">
-                                        <FaDownload className='ml-2' />
-                                        Download Pdf</Link> :
-                                    <Link to='/login' className="self-start px-10 py-3 text-lg font-medium rounded-3xl dark:bg-indigo-400 dark:text-gray-900 hover:bg-indigo-500">Pay Now</Link>
-                            }
+                        <div className='flex flex-col justify-start mt-5 mb-5'>
+                            <div className="flex items-center">
+                                <input type="checkbox" onClick={() => setConditon(!condition)} name="remember" id="remember" aria-label="Remember me" className="mr-1 rounded-sm focus:ring-indigo-400 focus:dark:border-indigo-400 focus:ring-2 accent-indigo-400" />
+                                <label htmlFor="remember" className="text-sm dark:text-gray-900">Terms and conditions</label>
+                            </div>
+                        </div>
+                        <div className='flex flex-col sm:flex-row lg:flex-row justify-around  mt-5'>
+                            <button onClick={checkOut} className={`${condition ? 'self-start items-center mb-3 px-8 py-2 text-lg font-medium rounded-3xl dark:bg-indigo-400 dark:text-gray-900 hover:bg-indigo-500' : 'self-start items-center mb-3 px-8 py-2 text-lg font-medium rounded-3xl dark:bg-indigo-400 dark:text-gray-500 btn-disabled'}`}>Check Out Now</button>
+                            <button className={`${download ? "self-start flex flex-row-reverse items-center px-8 py-2 text-lg font-medium rounded-3xl dark:bg-indigo-400 dark:text-gray-900 hover:bg-indigo-500" : 'hidden'}`}>
+                                <FaDownload className='ml-2' />
+                                Download Pdf</button>
                         </div>
                     </div>
-                    <img className='w-96' src={animation} alt="" />
+                    <div className=' flex items-center'>
+                        <img className='lg:w-96 rounded-lg' src={animation} alt="" />
+                    </div>
                 </div>
             </section >
         </div >

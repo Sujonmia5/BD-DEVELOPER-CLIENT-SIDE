@@ -20,26 +20,26 @@ const routes = createBrowserRouter([
             {
                 path: '/',
                 element: <Home />,
-                loader: () => fetch('http://localhost:5000/allCourse')
+                loader: () => fetch('https://assignment-10-server-hksyjnu4u-sujonmia5.vercel.app/allCourse')
             },
             {
                 path: '/home',
                 element: <Home />,
-                loader: () => fetch('http://localhost:5000/allCourse')
+                loader: () => fetch('https://assignment-10-server-hksyjnu4u-sujonmia5.vercel.app/allCourse')
             },
             {
                 path: '/course',
                 element: <CourseCart />,
-                loader: () => fetch('http://localhost:5000/allCourse')
+                loader: () => fetch('https://assignment-10-server-hksyjnu4u-sujonmia5.vercel.app/allCourse')
             },
             {
                 path: '/category/:id', element: <Course />,
-                loader: ({ params }) => fetch(`http://localhost:5000/category/${params.id}`)
+                loader: ({ params }) => fetch(`https://assignment-10-server-hksyjnu4u-sujonmia5.vercel.app/category/${params.id}`)
             },
             {
                 path: '/course/details/:id',
                 element: <PrivetRoute><CourseDetails /></PrivetRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/category/${params.id}`)
+                loader: ({ params }) => fetch(`https://assignment-10-server-hksyjnu4u-sujonmia5.vercel.app/category/${params.id}`)
             }
         ]
     },

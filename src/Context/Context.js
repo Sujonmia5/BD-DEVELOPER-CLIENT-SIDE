@@ -30,8 +30,8 @@ const Context = ({ children }) => {
     const forgetPassword = (email) => {
         return sendPasswordResetEmail(auth, email)
     }
-    const updateName = (name, photoUrl) => {
-        return updateProfile(auth.currentUser, { displayName: name, photoURL: photoUrl })
+    const updateName = (name, photoUrl, number) => {
+        return updateProfile(auth.currentUser, { displayName: name, photoURL: photoUrl, phoneNumber: number })
     }
     const verifyMail = () => {
         return sendEmailVerification(auth.currentUser)
