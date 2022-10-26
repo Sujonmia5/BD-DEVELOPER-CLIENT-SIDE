@@ -1,11 +1,14 @@
 import React, { useContext, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
 import { FaGoogle, FaGithub, FaRegTimesCircle } from 'react-icons/fa';
 import { AuthContext } from '../../Context/Context';
 import Swal from 'sweetalert2';
 
+
 const Login = () => {
+  const location = useLocation()
+  const from = location.state?.from.pathname || '/'
   const { loginUser, forgetPassword, googleRegister, gitHubRegister } = useContext(AuthContext)
   const [showModal, setShowModal] = useState(false)
   const [emailReset, setEmailReset] = useState()
@@ -21,9 +24,9 @@ const Login = () => {
     loginUser(email, password)
       .then(result => {
         const user = result.user;
-        console.log(user);
+        // console.log(user);
         Swal.fire('Login Successful', '', 'success')
-        Navigate('/home')
+        Navigate(from, { replace: true })
       })
       .catch(error => {
         Swal.fire(`${error.message}`, ``, `error`)

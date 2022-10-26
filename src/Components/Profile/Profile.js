@@ -3,7 +3,9 @@ import { AuthContext } from '../../Context/Context';
 import Navbar from '../Navbar/Navbar';
 
 const Profile = () => {
+    console.log('user');
     const { user } = useContext(AuthContext)
+    console.log(user);
     return (
         <>
             <Navbar />

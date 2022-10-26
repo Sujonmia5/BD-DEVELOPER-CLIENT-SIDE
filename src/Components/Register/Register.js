@@ -29,7 +29,7 @@ const Register = () => {
                     .then(() => { })
                     .catch(() => { })
                 Swal.fire('Account create Successful', 'Check your email and verify', "success")
-                console.log(user);
+                // console.log(user);
                 form.reset()
                 Navigate('/login')
             })

@@ -16,7 +16,7 @@ const Cart = ({ course }) => {
                         <p className='font-medium'>Rating: {rating}</p>
                     </div>
                 </div>
-                <Link to={`/course/details/${category_id}`} className="flex items-center justify-center w-full p-3 font-medium text-xl tracking-wide rounded-md dark:bg-indigo-400 dark:text-gray-900 hover:bg-indigo-500">Details More</Link>
+                <Link to={`/category/${category_id}`} className="flex items-center justify-center w-full p-3 font-medium text-xl tracking-wide rounded-md dark:bg-indigo-400 dark:text-gray-900 hover:bg-indigo-500">Details More</Link>
             </div>
         </div>
     );

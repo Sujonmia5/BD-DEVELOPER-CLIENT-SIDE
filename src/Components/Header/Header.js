@@ -6,6 +6,7 @@ import { AuthContext } from '../../Context/Context';
 
 const Header = () => {
     const { user } = useContext(AuthContext)
+
     return (
         <section className="dark:bg-gray-200 dark:text-gray-900">
             <div className="container flex flex-col justify-center px-6 mx-auto sm:pt-12 lg:pt-24 lg:flex-row lg:justify-between">

@@ -20,14 +20,14 @@ const Course = () => {
                     <p
                         aria-label="Category"
                         title="Film It!"
-                        className="inline-block mb-3 text-2xl font-bold leading-5 transition-colors duration-200 hover:text-deep-purple-accent-700"
+                        className="inline-block mb-3 text-2xl font-bold leading-5 transition-colors duration-200 hover:text-deep-purple-accent-700 text-gray-900"
                     >
                         {name}
                     </p>
-                    <p className="mb-2 hidden md:block text-gray-700">
+                    <p className="mb-2 hidden md:block text-gray-900">
                         {details}
                     </p>
-                    <div className='flex flex-col-reverse md:flex-row mx-auto justify-around md:mt-5'>
+                    <div className='flex flex-col-reverse text-gray-900 md:flex-row mx-auto justify-around md:mt-5'>
                         <div className='flex content-center'>
                             <img className="object-cover w-12 h-12 rounded-full shadow dark:bg-gray-500" src={Instructor.img} alt="" />
                             <div className='ml-3'>

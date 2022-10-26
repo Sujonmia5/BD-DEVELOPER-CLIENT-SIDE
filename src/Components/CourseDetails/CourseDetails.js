@@ -1,11 +1,12 @@
-import React from 'react';
-import { useLoaderData } from 'react-router-dom';
-import { FaStar } from 'react-icons/fa';
+import React, { useContext } from 'react';
+import { Link, useLoaderData } from 'react-router-dom';
+import { FaStar, FaDownload } from 'react-icons/fa';
+import { AuthContext } from '../../Context/Context';
 
 const CourseDetails = () => {
     const courseDetails = useLoaderData()
-    // console.log(courseDetails);
-    const { category_id, details, name, picture, price, rating, animation, Instructor } = courseDetails
+    const { details, name, price, rating, animation, Instructor } = courseDetails
+    const { user } = useContext(AuthContext)
     return (
         <div>
             <section className="dark:bg-gray-300 shadow-2xl rounded-lg border dark:text-gray-900">
@@ -32,8 +33,13 @@ const CourseDetails = () => {
                             </div>
                         </div>
                         <div className='flex justify-around mt-5'>
-                            <button className="self-start px-10 py-3 text-lg font-medium rounded-3xl dark:bg-indigo-400 dark:text-gray-900 hover:bg-indigo-500">Pay Now</button>
-                            <button className="self-start px-10 py-3 text-lg font-medium rounded-3xl dark:bg-indigo-400 dark:text-gray-900 hover:bg-indigo-500">Download Pdf</button>
+                            {
+                                user?.uid ?
+                                    <Link className="self-start flex flex-row-reverse items-center px-10 py-3 text-lg font-medium rounded-3xl dark:bg-indigo-400 dark:text-gray-900 hover:bg-indigo-500">
+                                        <FaDownload className='ml-2' />
+                                        Download Pdf</Link> :
+                                    <Link to='/login' className="self-start px-10 py-3 text-lg font-medium rounded-3xl dark:bg-indigo-400 dark:text-gray-900 hover:bg-indigo-500">Pay Now</Link>
+                            }
                         </div>
                     </div>
                     <img className='w-96' src={animation} alt="" />
