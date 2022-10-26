@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/Context';
 import Category from '../Category/Category';
 import avatar from '../../assets/avatar.jpeg'
@@ -41,35 +41,62 @@ const Navbar = () => {
                     <ul className="flex items-center hidden space-x-8 lg:flex">
                         <ul className="flex items-center hidden space-x-8 lg:flex">
                             <li>
-                                <Link
+                                <NavLink
                                     to="/home"
                                     aria-label="Home"
                                     title="Home"
-                                    className="font-medium text-xl tracking-wide text-gray-900 transition-colors duration-200 hover:text-teal-accent-400"
+                                    className={({ isActive }) =>
+                                        isActive
+                                            ? "text-red-600 font-medium text-xl tracking-wide hover:text-teal-accent-400"
+                                            : "font-medium text-xl tracking-wide text-gray-900 transition-colors duration-200 hover:text-teal-accent-400"
+                                    }
                                 >
                                     Home
-                                </Link>
+                                </NavLink>
                             </li>
                             <li>
-                                <Link
+                                <NavLink
                                     to="/course"
                                     aria-label="Course"
                                     title="Course"
-                                    className="font-medium text-xl tracking-wide text-gray-900 transition-colors duration-200 hover:text-teal-accent-400"
+                                    className={({ isActive }) =>
+                                        isActive
+                                            ? "text-red-600 font-medium text-xl tracking-wide hover:text-teal-accent-400"
+                                            : "font-medium text-xl tracking-wide text-gray-900 transition-colors duration-200 hover:text-teal-accent-400"
+                                    }
                                 >
                                     Course
-                                </Link>
+                                </NavLink>
                             </li>
                             <li>
-                                <Link
-                                    to="/about"
+                                <NavLink
+                                    to="/blog"
+                                    aria-label="Blog"
+                                    title="Blog"
+                                    className={({ isActive }) =>
+                                        isActive
+                                            ? "text-red-600 font-medium text-xl tracking-wide hover:text-teal-accent-400"
+                                            : "font-medium text-xl tracking-wide text-gray-900 transition-colors duration-200 hover:text-teal-accent-400"
+                                    }
+                                >
+                                    Blog
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink
+                                    to="/about us"
                                     aria-label="about"
-                                    title="about"
-                                    className="font-medium text-xl tracking-wide text-gray-900 transition-colors duration-200 hover:text-teal-accent-400"
+                                    title="about us"
+                                    className={({ isActive }) =>
+                                        isActive
+                                            ? "text-red-600 font-medium text-xl tracking-wide hover:text-teal-accent-400"
+                                            : "font-medium text-xl tracking-wide text-gray-900 transition-colors duration-200 hover:text-teal-accent-400"
+                                    }
                                 >
                                     About Us
-                                </Link>
+                                </NavLink>
                             </li>
+
                         </ul>
                         {
                             user?.uid ? <>
@@ -97,24 +124,32 @@ const Navbar = () => {
                                 </li>
                             </> : <>
                                 <li>
-                                    <Link
+                                    <NavLink
                                         to="/login"
-                                        className=" font-medium text-xl tracking-wide text-gray-900 transition-colors duration-200 hover:text-teal-accent-400"
-                                        aria-label="Sign up"
-                                        title="Sign up"
+                                        className={({ isActive }) =>
+                                            isActive
+                                                ? "text-red-600 font-medium text-xl tracking-wide hover:text-teal-accent-400"
+                                                : "font-medium text-xl tracking-wide text-gray-900 transition-colors duration-200 hover:text-teal-accent-400"
+                                        }
+                                        aria-label="Sign in"
+                                        title="Sign in"
                                     >
                                         Login
-                                    </Link>
+                                    </NavLink>
                                 </li>
                                 <li>
-                                    <Link
+                                    <NavLink
                                         to="/register"
-                                        className="font-medium text-xl tracking-wide text-gray-900 transition-colors duration-200 hover:text-teal-accent-400"
+                                        className={({ isActive }) =>
+                                            isActive
+                                                ? "text-red-600 font-medium text-xl tracking-wide hover:text-teal-accent-400"
+                                                : "font-medium text-xl tracking-wide text-gray-900 transition-colors duration-200 hover:text-teal-accent-400"
+                                        }
                                         aria-label="Sign up"
                                         title="Sign up"
                                     >
                                         Register
-                                    </Link>
+                                    </NavLink>
                                 </li>
                             </>
                         }
@@ -198,25 +233,47 @@ const Navbar = () => {
                                     <nav>
                                         <ul className="space-y-4">
                                             <li>
-                                                <Link
-                                                    to="/"
-                                                    aria-label="Our product"
-                                                    title="Our product"
-                                                    className='text-1xl text-gray-900 block font-medium text-start mx-auto mt-2 border p-3 rounded-lg bg-slate-300 hover:bg-slate-400'
+                                                <NavLink
+                                                    to="/home"
+                                                    aria-label="Home"
+                                                    title="Home"
+                                                    className={({ isActive }) =>
+                                                        isActive
+                                                            ? "text-1xl text-gray-100 block text-start mx-auto mt-2 font-bold border p-3 rounded-lg bg-slate-500"
+                                                            : "text-1xl text-gray-900 block font-bold text-start mx-auto mt-2 border p-3 rounded-lg bg-slate-300 hover:bg-slate-400"
+                                                    }
                                                 >
                                                     Home
-                                                </Link>
+                                                </NavLink>
+                                            </li>
+                                            <li>
+                                                <NavLink
+                                                    to="/profile"
+                                                    aria-label="Profile"
+                                                    title="Profile"
+                                                    className={({ isActive }) =>
+                                                        isActive
+                                                            ? "text-1xl text-gray-100 block text-start mx-auto mt-2 font-bold border p-3 rounded-lg bg-slate-500"
+                                                            : "text-1xl text-gray-900 block font-bold text-start mx-auto mt-2 border p-3 rounded-lg bg-slate-300 hover:bg-slate-400"
+                                                    }
+                                                >
+                                                    Profile
+                                                </NavLink>
                                             </li>
                                             <Category />
                                             <li>
-                                                <a
-                                                    href="/"
+                                                <NavLink
+                                                    to="/about"
                                                     aria-label="About us"
                                                     title="About us"
-                                                    className='text-1xl text-gray-900 block font-medium text-start mx-auto mt-2 border p-3 rounded-lg bg-slate-300 hover:bg-slate-400'
+                                                    className={({ isActive }) =>
+                                                        isActive
+                                                            ? "text-1xl text-gray-100 block text-start mx-auto mt-2 font-bold border p-3 rounded-lg bg-slate-500"
+                                                            : "text-1xl text-gray-900 block font-bold text-start mx-auto mt-2 border p-3 rounded-lg bg-slate-300 hover:bg-slate-400"
+                                                    }
                                                 >
                                                     About us
-                                                </a>
+                                                </NavLink>
                                             </li>
                                             <li>
                                                 <a

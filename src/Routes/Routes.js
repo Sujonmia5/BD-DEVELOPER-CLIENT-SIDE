@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom"
+import Blog from "../Components/Blog/Blog"
 import Course from "../Components/Course/Course"
 import CourseCart from "../Components/CourseCart/CourseCart"
 import CourseDetails from "../Components/CourseDetails/CourseDetails"
@@ -41,6 +42,9 @@ const routes = createBrowserRouter([
                 loader: ({ params }) => fetch(`http://localhost:5000/category/${params.id}`)
             }
         ]
+    },
+    {
+        path: '/blog', element: <Blog />
     },
     {
         path: '/profile', element: <PrivetRoute><Profile /></PrivetRoute>
