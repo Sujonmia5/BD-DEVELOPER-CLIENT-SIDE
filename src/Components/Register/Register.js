@@ -15,24 +15,26 @@ const Register = () => {
         e.preventDefault()
         const form = e.target;
         const name = form.name.value;
+        const photoUrl = form.photoUrl.value;
         const email = form.email.value;
         const password = form.password.value;
         console.log(name, email, password);
         createUser(email, password)
             .then(result => {
                 const user = result.user
-                updateName(name)
+                updateName(name, photoUrl)
                     .then(() => { })
                     .catch(() => { })
                 verifyMail()
                     .then(() => { })
                     .catch(() => { })
                 Swal.fire('Account create Successful', 'Check your email and verify', "success")
+                console.log(user);
                 form.reset()
                 Navigate('/login')
             })
             .catch(error => {
-                setError(error.message);
+                Swal.fire(`${error.message}`, ``, `error`)
             })
 
     }
@@ -73,6 +75,10 @@ const Register = () => {
                             <div>
                                 <label htmlFor="name" className="block mb-2 text-sm text-left">Enter Your Full Name</label>
                                 <input type="name" name="name" id="name" placeholder="Enter Your Full Name" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-100 dark:text-gray-900" />
+                            </div>
+                            <div>
+                                <label htmlFor="photoUrl" className="block mb-2 text-sm text-left">Photo Url</label>
+                                <input type="text" name="photoUrl" id="photoUrl" placeholder="https://encrypted-tbn0.gstatic.com/images?" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-100 dark:text-gray-900" />
                             </div>
                             <div>
                                 <label htmlFor="email" className="block mb-2 text-sm text-left">Email address</label>

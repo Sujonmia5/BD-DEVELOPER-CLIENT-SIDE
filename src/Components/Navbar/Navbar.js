@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Context/Context';
 import Category from '../Category/Category';
+import avatar from '../../assets/avatar.jpeg'
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const { user } = useContext(AuthContext)
+    console.log(user);
 
     return (
         <div className="dark:bg-slate-400 h-20">
@@ -74,26 +78,54 @@ const Navbar = () => {
                         </label>
                     </ul>
                     <ul className="flex items-center hidden space-x-8 lg:flex">
-                        <li>
-                            <Link
-                                to="/login"
-                                className=" font-medium text-xl tracking-wide text-gray-900 transition-colors duration-200 hover:text-teal-accent-400"
-                                aria-label="Sign up"
-                                title="Sign up"
-                            >
-                                Login
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                to="/register"
-                                className="font-medium text-xl tracking-wide text-gray-900 transition-colors duration-200 hover:text-teal-accent-400"
-                                aria-label="Sign up"
-                                title="Sign up"
-                            >
-                                Register
-                            </Link>
-                        </li>
+                        {
+                            user?.email ? <>
+                                <li>
+                                    <div className="dropdown dropdown-end">
+                                        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                            <div className="w-10 shadow-xl rounded-full">
+                                                {
+                                                    user?.photoURL ? <img title={`${user.displayName}`} src={user.photoURL} alt="" /> : <img src={avatar} alt="" />
+                                                }
+                                            </div>
+                                        </label>
+                                        <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
+                                            <li>
+                                                <Link to='/profile' className="justify-between">
+                                                    Profile
+                                                    <span className="badge">New</span>
+                                                </Link>
+                                            </li>
+                                            <li>
+                                                <a href="">Logout</a>
+
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </> : <>
+                                <li>
+                                    <Link
+                                        to="/login"
+                                        className=" font-medium text-xl tracking-wide text-gray-900 transition-colors duration-200 hover:text-teal-accent-400"
+                                        aria-label="Sign up"
+                                        title="Sign up"
+                                    >
+                                        Login
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link
+                                        to="/register"
+                                        className="font-medium text-xl tracking-wide text-gray-900 transition-colors duration-200 hover:text-teal-accent-400"
+                                        aria-label="Sign up"
+                                        title="Sign up"
+                                    >
+                                        Register
+                                    </Link>
+                                </li>
+                            </>
+                        }
                     </ul>
                     <div className="lg:hidden">
                         <button

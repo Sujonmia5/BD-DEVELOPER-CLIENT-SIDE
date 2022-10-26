@@ -4,6 +4,7 @@ import CourseCart from "../Components/CourseCart/CourseCart"
 import CourseDetails from "../Components/CourseDetails/CourseDetails"
 import Home from "../Components/Home/Home"
 import Login from "../Components/Login/Login"
+import Profile from "../Components/Profile/Profile"
 import Register from "../Components/Register/Register"
 import Layout from "../Layout/Layout"
 
@@ -36,8 +37,10 @@ const routes = createBrowserRouter([
                 element: <CourseDetails />,
                 loader: ({ params }) => fetch(`http://localhost:5000/category/${params.id}`)
             }
-
         ]
+    },
+    {
+        path: '/profile', element: <Profile />
     },
     {
         path: '/register', element: <Register />

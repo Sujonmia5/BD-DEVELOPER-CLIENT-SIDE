@@ -4,7 +4,7 @@ import { FaStar } from 'react-icons/fa';
 
 const Course = () => {
     const data = useLoaderData()
-    console.log(data);
+    // console.log(data);
     const { name, price, picture, details, Instructor, category_id, rating } = data
     return (
         <div className="px-4 shadow-lg w-auto py-10 rounded-lg mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl ">

@@ -4,7 +4,7 @@ import Cart from '../Cart/Cart';
 
 const CourseCart = () => {
     const course = useLoaderData()
-    console.log(course);
+    // console.log(course);
     return (
         <div>
             <div className='mb-10'>
