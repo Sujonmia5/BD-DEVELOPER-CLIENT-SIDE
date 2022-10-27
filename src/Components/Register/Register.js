@@ -3,9 +3,11 @@ import Navbar from '../Navbar/Navbar';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
 import { AuthContext } from '../../Context/Context';
 import Swal from 'sweetalert2';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Register = () => {
+    const location = useLocation()
+    const from = location.state?.from.pathname || '/'
     const [error, setError] = useState('')
     const { createUser, logOut, updateName, verifyMail, googleRegister, gitHubRegister } = useContext(AuthContext)
     // console.log(user);
@@ -45,7 +47,7 @@ const Register = () => {
             .then(result => {
                 const user = result.user;
                 Swal.fire('Account create Successful', '', "success")
-                Navigate('/home')
+                Navigate(from, { replace: true })
             })
             .catch(error => {
                 setError(error.message)
@@ -56,7 +58,7 @@ const Register = () => {
             .then(result => {
                 const user = result.user;
                 Swal.fire('Account create Successful', '', "success")
-                Navigate('/home')
+                Navigate(from, { replace: true })
             })
             .catch(error => {
                 setError(error.message)

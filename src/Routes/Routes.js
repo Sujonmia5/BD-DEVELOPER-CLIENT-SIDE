@@ -6,6 +6,7 @@ import CourseDetails from "../Components/CourseDetails/CourseDetails"
 import Error from "../Components/Error/Error"
 import Home from "../Components/Home/Home"
 import Login from "../Components/Login/Login"
+import Pdf from "../Components/Pdf/Pdf"
 import Profile from "../Components/Profile/Profile"
 import Register from "../Components/Register/Register"
 import Layout from "../Layout/Layout"
@@ -47,6 +48,11 @@ const routes = createBrowserRouter([
         path: '/blog', element: <Blog />
     },
     {
+        path: '/course/download/pdf/:id',
+        loader: ({ params }) => fetch(`https://assignment-10-server-hksyjnu4u-sujonmia5.vercel.app/category/${params.id}`),
+        element: <PrivetRoute> <Pdf /></PrivetRoute>
+    },
+    {
         path: '/profile', element: <PrivetRoute><Profile /></PrivetRoute>
     },
     {
@@ -54,7 +60,8 @@ const routes = createBrowserRouter([
     },
     {
         path: '/login', element: <Login />
-    },
+    }
+
 ])
 
 export default routes

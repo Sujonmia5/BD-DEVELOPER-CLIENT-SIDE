@@ -5,7 +5,7 @@ const Blog = () => {
     return (
         <>
             <Navbar />
-            <section className="bg-gray-100 text-gray-900">
+            <section className="bg-gray-100 text-gray-900 pb-44">
                 <div className="container flex flex-col justify-center p-4 mx-auto md:p-8">
                     <h2 className="mb-12 text-4xl font-bold leading-none text-center sm:text-5xl">Assignment-10 Questions And Answers</h2>
                     <div className="grid gap-10 md:gap-8 sm:p-3 md:grid-cols-2 lg:px-12 xl:px-32 text-xl">
@@ -31,7 +31,7 @@ const Blog = () => {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section >
         </>
     );
 };

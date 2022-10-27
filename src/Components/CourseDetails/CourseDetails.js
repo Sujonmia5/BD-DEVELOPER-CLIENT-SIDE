@@ -1,16 +1,14 @@
-import React, { useContext, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useLoaderData } from 'react-router-dom';
 import { FaStar, FaDownload } from 'react-icons/fa';
-import { AuthContext } from '../../Context/Context';
 import Swal from 'sweetalert2';
 
 
 const CourseDetails = () => {
     const courseDetails = useLoaderData()
-    const { details, name, price, rating, animation, Instructor } = courseDetails
-    const [condition, setConditon] = useState(false)
+    const { details, category_id, name, price, rating, animation, Instructor } = courseDetails
+    const [condition, setCondition] = useState(false)
     const [download, setDownload] = useState(false)
-
 
     const checkOut = () => {
         Swal.fire('Congratulations Checkout successful', 'You can now Download pdf File', 'success')
@@ -44,15 +42,15 @@ const CourseDetails = () => {
                         </div>
                         <div className='flex flex-col justify-start mt-5 mb-5'>
                             <div className="flex items-center">
-                                <input type="checkbox" onClick={() => setConditon(!condition)} name="remember" id="remember" aria-label="Remember me" className="mr-1 rounded-sm focus:ring-indigo-400 focus:dark:border-indigo-400 focus:ring-2 accent-indigo-400" />
+                                <input type="checkbox" onClick={() => setCondition(!condition)} name="remember" id="remember" aria-label="Remember me" className="mr-1 rounded-sm focus:ring-indigo-400 focus:dark:border-indigo-400 focus:ring-2 accent-indigo-400" />
                                 <label htmlFor="remember" className="text-sm dark:text-gray-900">Terms and conditions</label>
                             </div>
                         </div>
                         <div className='flex flex-col sm:flex-row lg:flex-row justify-around  mt-5'>
                             <button onClick={checkOut} className={`${condition ? 'self-start items-center mb-3 px-8 py-2 text-lg font-medium rounded-3xl dark:bg-indigo-400 dark:text-gray-900 hover:bg-indigo-500' : 'self-start items-center mb-3 px-8 py-2 text-lg font-medium rounded-3xl dark:bg-indigo-400 dark:text-gray-500 btn-disabled'}`}>Check Out Now</button>
-                            <button className={`${download ? "self-start flex flex-row-reverse items-center px-8 py-2 text-lg font-medium rounded-3xl dark:bg-indigo-400 dark:text-gray-900 hover:bg-indigo-500" : 'hidden'}`}>
+                            <Link to={`/course/download/pdf/${category_id}`} className={`${download ? "self-start flex flex-row-reverse items-center px-8 py-2 text-lg font-medium rounded-3xl dark:bg-indigo-400 dark:text-gray-900 hover:bg-indigo-500" : "hidden"}`}>
                                 <FaDownload className='ml-2' />
-                                Download Pdf</button>
+                                Download Pdf</Link>
                         </div>
                     </div>
                     <div className=' flex items-center'>
