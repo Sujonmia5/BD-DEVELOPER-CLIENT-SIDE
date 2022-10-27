@@ -34,11 +34,10 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 ## Learn More
 
-You can learn more in the [Live-Site-Link](---)
+You can learn more in the [Live-Site-Link](https://bd-developers-7438e.web.app/)
 
-code Repository Link [----]
+code Repository Link [https://github.com/programming-hero-web-course1/b610-learning-platform-client-side-Sujonmia5]
 
-Server Site Link [---]
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
@@ -46,9 +45,11 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 ### Advanced Configuration
 Future of this Course
 
-* You can easy learning the course.
+* You can easily learning the course.
 * Easily Checkout  the course
 * Easily download to pdf on the course.
+* Email-password, google and github login system this site
+* you can easily login this site.
 
 ### Deployment
 
@@ -57,4 +58,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# Assignment 10
+
 # b610-learning-platform-client-side-Sujonmia5

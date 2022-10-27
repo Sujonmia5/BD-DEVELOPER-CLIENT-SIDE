@@ -38,7 +38,7 @@ const Login = () => {
         const user = result.user
         console.log(user);
         Swal.fire('Login Successful', '', 'success')
-        Navigate('/home')
+        Navigate(from, { replace: true })
       })
       .catch(error => {
         Swal.fire(`${error.message}`, ``, `error`)
@@ -50,7 +50,7 @@ const Login = () => {
         const user = result.user
         console.log(user);
         Swal.fire('Login Successful', '', 'success')
-        Navigate('/home')
+        Navigate(from, { replace: true })
       })
       .catch(error => {
         Swal.fire(`${error.message}`, ``, `error`)
