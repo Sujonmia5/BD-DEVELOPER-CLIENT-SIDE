@@ -11,7 +11,7 @@ const Profile = () => {
             <Navbar />
             <div className="h-[90vh] p-8 dark:text-gray-900">
                 <div className='flex justify-center content-center mt-[10%] my-auto'>
-                    <div className='p-8 bg-gray-100 sm:flex sm:space-x-6'>
+                    <div className='p-8 bg-white rounded-lg sm:flex sm:space-x-6'>
                         <div className="flex-shrink-0 border shadow-lg rounded-md w-full mb-6  sm:w-32 sm:mb-0">
                             <img src={`${user.photoURL}`} alt="" className="object-cover object-center w-full h-32 rounded dark:bg-gray-500" />
                         </div>

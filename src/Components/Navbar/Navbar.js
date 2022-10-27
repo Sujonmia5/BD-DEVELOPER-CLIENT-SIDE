@@ -9,8 +9,7 @@ const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const Navigate = useNavigate()
     const { user, logOut } = useContext(AuthContext)
-
-    console.log(user);
+    const [toggle, setToggle] = useState(false)
 
     const logOutHandle = () => {
         logOut()
@@ -154,9 +153,11 @@ const Navbar = () => {
                             </>
                         }
                         <label htmlFor="Toggle1" className="inline-flex items-center space-x-4 cursor-pointer dark:text-gray-100">
+                            <p className='text-indigo-500'>{toggle ? 'Dark' : 'Light'
+                            }</p>
                             <span className="relative">
-                                <input id="Toggle1" type="checkbox" className="hidden peer" />
-                                <div className="w-10 h-6 rounded-full shadow-inner dark:bg-gray-100 peer-checked:dark:bg-indigo-900"></div>
+                                <input id="Toggle1" onClick={() => setToggle(!toggle)} type="checkbox" className="hidden peer" />
+                                <div className="w-10 h-6 rounded-full shadow-inner dark:bg-gray-100 peer-checked:dark:bg-indigo-500"></div>
                                 <div className="absolute inset-y-0 left-0 w-4 h-4 m-1 rounded-full shadow peer-checked:right-0 peer-checked:left-auto dark:bg-gray-800"></div>
                             </span>
                         </label>
